@@ -6,10 +6,11 @@ const student = require('./student')
 // ONE CAMPUS HAS MANY STUDENTS --> 1-MANY
 
 student.belongsTo(campus)
-campus.belongsToMany(student)
+// campus.belongsToMany(student) --> belongsToMany establishes a many to many relationship which is not required here.
+campus.hasMany(student) // hasMany successfully establishes a one to many relationship between campus and students.
 
 // export
-modules.export = {
+module.exports = {
     student,
     campus  
 }
