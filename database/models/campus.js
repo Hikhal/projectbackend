@@ -6,8 +6,10 @@ const Campus = db.define('campus', {
         type: DataTypes.STRING,
         allownull: false,
     },
+    // for the image, we'll pass a url. And the default value is an empty string.
     img: {
-        type: DataTypes.BLOB
+        type: DataTypes.STRING,
+        defaultValue: ""
     },
     address: {
         type: DataTypes.STRING,
