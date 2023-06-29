@@ -2,7 +2,7 @@ const db = require('../db');
 
 const {DataTypes}= require('sequelize');
 
-const Student= db.define('students',{
+const student= db.define('student',{
     firstName:{
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,7 +19,8 @@ const Student= db.define('students',{
     },
 
     image:{
-        type: DataTypes.BLOB,
+        type: DataTypes.STRING,
+        defaultValue: ""
     },
 
     email:{
@@ -32,4 +33,4 @@ const Student= db.define('students',{
     }
 })
 
-module.exports=Student;
+module.exports=student;
