@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize')
 
 // creating instance
-const name = 'uniInfo'
+const name = 'uniinfo'
 const db = new Sequelize(`postgres://localhost:5432/${name}`)
 
 
