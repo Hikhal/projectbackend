@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const {Campuses} = require("../database/models");
+const {campus} = require("../database/models");
 
 //Root here is localhost:8080/api/campuses
 router.get("/", async (req, res, next) => {
     try{
 
         //Campuses.findAll(); === SELECT * FROM campuses
-        const allCampuses = await Campuses.findAll();
+        const allCampuses = await campus.findAll();
 
         allCampuses
         ? res.status(200).json(allCampuses) //if allCampuses true
