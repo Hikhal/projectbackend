@@ -29,7 +29,7 @@ const student= db.define('student',{
     },
 
     gpa:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
     }
 })
 
