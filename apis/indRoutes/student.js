@@ -1,0 +1,1 @@
+// Display the appropriate student when the url matches `/students/:studentId`
