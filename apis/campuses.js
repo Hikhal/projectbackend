@@ -27,4 +27,13 @@ router.post('/',async(req,res,next)=>{
         next(error)
     }
 });
+
+router.get("/:campusid",async (req,res,next)=>{
+    try{
+        const campusFound= await campus.findByPk(req.params.campusid);
+        campusFound?res.status(200).json(campusFound):res.status(400).send("Student not found")
+    }catch(error){
+        next(error)
+    }
+});
 module.exports = router;

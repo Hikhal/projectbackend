@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
 router.get("/:studentid",async (req,res,next)=>{
     try{
         console.log(req.params.studentid)
-        const studentFound= await student.findByPk(2);
+        const studentFound= await student.findByPk(req.params.studentid);
         studentFound?res.status(200).json(studentFound):res.status(400).send("Student not found")
     }catch(error){
         next(error)
