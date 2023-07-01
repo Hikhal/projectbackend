@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const e = require('express')
 const {student}  = require('../database/models')
 
 router.use(require('express').json())

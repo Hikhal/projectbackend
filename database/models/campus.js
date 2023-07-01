@@ -15,7 +15,7 @@ const campus = db.define('campus', {
         type: DataTypes.STRING,
         allownull: false
     },
-    desciption: {
+    description: {
         type: DataTypes.TEXT,
         allownull: false
     }

@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const {campus} = require("../database/models");
-
+router.use(require('express').json())
 //Root here is localhost:8080/api/campuses
 router.get("/", async (req, res, next) => {
     try{
@@ -17,4 +16,15 @@ router.get("/", async (req, res, next) => {
         next(error);
     }
 })
+
+router.post('/',async(req,res,next)=>{
+    try{
+        //deconstruning the data passed from the form
+        const {name,image,address,description}= req.body;
+        const newCampus= await campus.create({name,image,address,description});
+        res.status(200).json(newCampus);
+    }catch (error){
+        next(error)
+    }
+});
 module.exports = router;
