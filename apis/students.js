@@ -3,7 +3,6 @@ const {student}  = require('../database/models')
 
 router.use(require('express').json())
 
-
 // path is defined as localhost..../apis/students
 router.get('/', async (req, res, next)=>{
     try {
@@ -42,6 +41,18 @@ router.post('/', async (req, res, next) => {
         next(error);
     }
 });
+
+router.get("/:studentid",async (req,res,next)=>{
+    try{
+        console.log(req.params.studentid)
+        const studentFound= await student.findByPk(2);
+        studentFound?res.status(200).json(studentFound):res.status(400).send("Student not found")
+    }catch(error){
+        next(error)
+    }
+})
+
+module.exports=router;
 
 
 
