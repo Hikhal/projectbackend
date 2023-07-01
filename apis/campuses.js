@@ -7,7 +7,8 @@ router.get("/", async (req, res, next) => {
     try{
 
         //Campuses.findAll(); === SELECT * FROM campuses
-        const allCampuses = await campus.findAll();
+        const allCampuses = await campus.findAll()
+        console.log(allCampuses)
 
         allCampuses
         ? res.status(200).json(allCampuses) //if allCampuses true
@@ -31,9 +32,9 @@ router.post('/',async(req,res,next)=>{
 router.get("/:campusid",async (req,res,next)=>{
     try{
         const campusFound= await campus.findByPk(req.params.campusid);
-        campusFound?res.status(200).json(campusFound):res.status(400).send("Student not found")
+        campusFound?res.status(200).json(campusFound):res.status(400).send("Campus not found") //typo in res message should be Campus instead of Student
     }catch(error){
         next(error)
     }
 });
-module.exports = router;
+ module.exports = router;
