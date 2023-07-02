@@ -58,8 +58,6 @@ router.delete("/delete/:studentid",async(req,res,next)=>{
         res.sendStatus(204);
     }catch(error){
         console.log(error)
-        next(error);
-
     }
 })
 

@@ -37,4 +37,13 @@ router.get("/:campusid",async (req,res,next)=>{
         next(error)
     }
 });
+
+router.delete("/delete/:campusid",async(req,res,next)=>{
+    try{
+        const campusDeletedCount= await campus.destroy({where:{id:req.params.campusid}});
+        res.sendStatus(204);
+    }catch(error){
+        console.log(error)
+    }
+})
  module.exports = router;
