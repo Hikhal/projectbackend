@@ -32,7 +32,11 @@ router.post('/', async (req,res,next)=>{
 router.get("/:campusid", async (req,res,next)=>{
     try{
         const campusFound= await campus.findByPk(req.params.campusid);
-        campusFound?res.status(200).json(campusFound):res.status(400).send("Campus not found") //typo in res message should be Campus instead of Student
+        if(campusFound){
+            res.status(200).json(campusFound);
+        } else {
+            res.status(400).send("Campus not found")
+        }
     }catch(error){
         next(error)
     }
@@ -62,7 +66,7 @@ router.post('/:campusid', async (req,res,next) => {
 
         // If the campus is found, create a new 'student' record in the database,
         // using the data sent in the request body and set 'campusId' to 'id'
-        const newstudent = student.create({firstName, lastName, address, image, email, gpa, campusId:id})
+        const newstudent = await student.create({firstName, lastName, address, image, email, gpa, campusId:id})
 
         // If the new student record was successfully created,
         // send a 200 status response with the new student's data in JSON format.
