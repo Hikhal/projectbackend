@@ -52,6 +52,17 @@ router.get("/:studentid",async (req,res,next)=>{
     }
 })
 
+router.delete("/delete/:studentid",async(req,res,next)=>{
+    try{
+        const studentFound= await student.destroy({where:{id:req.params.studentid}});
+        res.sendStatus(204);
+    }catch(error){
+        console.log(error)
+        next(error);
+
+    }
+})
+
 module.exports=router;
 
 
