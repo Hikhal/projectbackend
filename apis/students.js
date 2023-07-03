@@ -61,6 +61,23 @@ router.delete("/delete/:studentid",async(req,res,next)=>{
     }
 })
 
+router.put('/update/:studentid', async(req,res,next)=>{
+    try {
+        const studentId = req.params.studentid
+        const updatedStudentData = req.body
+
+        // updating student data in the database
+        const updatedStudent = await student.update(updatedStudentData, {
+            where:{id: studentId}
+        })
+        
+        res.sendStatus(200).json(updatedStudent)
+    } catch (error) {
+        next(error)
+   
+    }
+})
+
 module.exports=router;
 
 
