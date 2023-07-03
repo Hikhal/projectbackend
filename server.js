@@ -26,7 +26,7 @@ const serverRun=()=>{
     })
 };
 
-const syncServer=()=>db.sync();
+const syncServer=()=>db.sync({force: true});
 
 syncServer();
 serverRun()
