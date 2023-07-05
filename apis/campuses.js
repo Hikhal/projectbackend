@@ -41,6 +41,8 @@ router.get("/:campusid", async (req,res,next)=>{
         next(error)
     }
 });
+
+
 router.delete("/delete/:campusid",async(req,res,next)=>{
     try{
         const campusDeletedCount= await campus.destroy({where:{id:req.params.campusid}});
@@ -76,6 +78,16 @@ router.post('/:campusid', async (req,res,next) => {
        next(error)
     }
 } )
+
+
+router.put("/update/:campusid",async (req,res,next)=>{
+    try {
+        const updatedCampus= await campus.update(req.body,{where:{id:req.params.campusid}})
+        res.sendStatus(200).json(updatedCampus)
+    } catch (error) {
+        next(error);
+    }
+})
 
 
 
