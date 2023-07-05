@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 //const db = require('./database/db');
-const bodyParser = require('body-parser');
 const PORT="8080"
 const app = express();
 
@@ -13,13 +12,13 @@ const app = express();
 // });
 
 // Use body-parser middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 
 // app.use("/api",require("./apis"))
-//app.use(cors());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
