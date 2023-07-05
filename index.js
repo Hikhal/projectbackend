@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./database/db');
+// const db = require('./database/db');
 const PORT=8080
 const app = express();
 
@@ -30,16 +30,16 @@ app.use((error, req, res, next) => {
 
 })
 
-const serverRun=()=>{
-    app.listen(PORT,()=>{
-        console.log("Live on port:"+PORT);
-    })
-};
+// const serverRun=()=>{
+//     app.listen(PORT,()=>{
+//         console.log("Live on port:"+PORT);
+//     })
+// };
 
-const syncServer=()=>db.sync();
+// const syncServer=()=>db.sync();
 
-syncServer();
-serverRun()
+// syncServer();
+// serverRun()
 
 module.exports=app;
 
