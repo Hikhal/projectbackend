@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
 })
 
+app.use((error, req, res, next) => {
+  console.log(error)
+  res.send("hey this is my api not running")
+
+})
 
 const serverRun=()=>{
     app.listen(PORT,()=>{
