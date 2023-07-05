@@ -16,6 +16,10 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
+
 
 app.use("/api",require("./apis"))
 //app.use(cors());
