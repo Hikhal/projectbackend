@@ -1,8 +1,9 @@
+require('dotenv').config()
 const { Sequelize } = require('sequelize')
 
 // creating instance
 const name = 'uniinfo'
-const db = new Sequelize(`postgres://localhost:5432/${name}`)
+const db = new Sequelize(process.env.DATABASE_URL)
 
 db.authenticate()
   .then(() => {
