@@ -70,8 +70,10 @@ router.put('/update/:studentid', async(req,res,next)=>{
         const updatedStudent = await student.update(updatedStudentData, {
             where:{id: studentId}
         })
+
+        const updatedStudentID = await student.findByPk(studentId)
         
-        res.sendStatus(200).json(updatedStudent)
+        res.json(updatedStudentID)
     } catch (error) {
         next(error)
    
