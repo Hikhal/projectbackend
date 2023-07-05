@@ -3,6 +3,7 @@ const cors = require('cors');
 const db = require('./database');
 const PORT=8080
 const app = express();
+app.use(cors());
 
 // app.use(function(req, res, next) {
 //   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
@@ -18,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/api",require("./apis"))
-app.use(cors());
+
 
 app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
