@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-// app.use("/api",require("./apis"))
+app.use("/api",require("./apis"))
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -30,16 +30,16 @@ app.use((error, req, res, next) => {
 
 })
 
-// const serverRun=()=>{
-//     app.listen(PORT,()=>{
-//         console.log("Live on port:"+PORT);
-//     })
-// };
+const serverRun=()=>{
+    app.listen(PORT,()=>{
+        console.log("Live on port:"+PORT);
+    })
+};
 
-// const syncServer=()=>db.sync();
+const syncServer=()=>db.sync();
 
-// syncServer();
-// serverRun()
+syncServer();
+serverRun()
 
 module.exports=app;
 
