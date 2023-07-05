@@ -22,7 +22,7 @@ app.use("/api",require("./apis"))
 
 
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
+  res.send('Hey this our API running 🥳')
 })
 
 app.use((error, req, res, next) => {
