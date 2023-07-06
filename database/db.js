@@ -1,16 +1,18 @@
+require('dotenv').config()
 const { Sequelize } = require('sequelize')
+const pg = require('pg')
 
 // creating instance
 const name = 'uniinfo'
-const db = new Sequelize(`postgres://localhost:5432/${name}`)
+const db = new Sequelize(process.env.DATABASE_URL)
 
-db.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+// db.authenticate()
+//   .then(() => {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch(err => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 
 
 
