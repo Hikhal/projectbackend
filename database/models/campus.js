@@ -9,7 +9,7 @@ const campus = db.define('campus', {
     // for the image, we'll pass a url. And the default value is an empty string.
     img: {
         type: DataTypes.STRING,
-        defaultValue: ""
+        defaultValue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMekAAa51_aFSsjFJ1DxMxGgsPNWjzLwU6Ng&usqp=CAU"
     },
     address: {
         type: DataTypes.STRING,

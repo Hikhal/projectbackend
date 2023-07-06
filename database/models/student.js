@@ -20,7 +20,7 @@ const student= db.define('student',{
 
     image:{
         type: DataTypes.STRING,
-        defaultValue: ""
+        defaultValue: "https://flyclipart.com/thumb2/profile-icon-png-black-196391.png"
     },
 
     email:{
