@@ -75,7 +75,7 @@ const seedCampus=[
       },
       {
         name: 'Peking University',
-
+        
         address: '5 Yiheyuan Rd, Haidian District, Beijing, China',
         description: 'Peking University, located in Beijing, China, is a prestigious research university and one of the oldest in the country. It is recognized for its comprehensive academic programs, with a focus on science, humanities, social sciences, and economics.'
       },
